@@ -23,6 +23,12 @@ importers:
       '@payloadcms/ui':
         specifier: ^3.20.0
         version: 3.20.0(@types/react@19.0.8)(monaco-editor@0.52.2)(next@15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.77.4))(payload@3.20.0(graphql@16.10.0)(monaco-editor@0.52.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      color:
+        specifier: ^4.2.3
+        version: 4.2.3
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -41,6 +47,9 @@ importers:
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
+      tailwind-merge:
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -48,6 +57,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.0
         version: 4.0.3
+      '@types/color':
+        specifier: ^4.2.0
+        version: 4.2.0
       '@types/node':
         specifier: ^20
         version: 20.17.16
@@ -1558,6 +1570,15 @@ packages:
 
   '@types/busboy@1.5.4':
     resolution: {integrity: sha512-kG7WrUuAKK0NoyxfQHsVE6j1m01s6kMma64E+OZenQABMQyTJop1DumUWcLwAQ2JzpefU7PDYoRDKl8uZosFjw==}
+
+  '@types/color-convert@2.0.4':
+    resolution: {integrity: sha512-Ub1MmDdyZ7mX//g25uBAoH/mWGd9swVbt8BseymnaE18SU4po/PjmCrHxqIIRjBo3hV/vh1KGr0eMxUhp+t+dQ==}
+
+  '@types/color-name@1.1.5':
+    resolution: {integrity: sha512-j2K5UJqGTxeesj6oQuGpMgifpT5k9HprgQd8D1Y0lOFqKHl3PJu5GMeS4Y5EgjS55AE6OQxf8mPED9uaGbf4Cg==}
+
+  '@types/color@4.2.0':
+    resolution: {integrity: sha512-6+xrIRImMtGAL2X3qYkd02Mgs+gFGs+WsK0b7VVMaO4mYRISwyTjcqNrO0mNSmYEoq++rSLDB2F5HDNmqfOe+A==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -3645,6 +3666,9 @@ packages:
 
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+
+  tailwind-merge@3.0.1:
+    resolution: {integrity: sha512-AvzE8FmSoXC7nC+oU5GlQJbip2UO7tmOhOfQyOmPhrStOGXHU08j8mZEHZ4BmCqY5dWTCo4ClWkNyRNx1wpT0g==}
 
   tailwindcss@4.0.3:
     resolution: {integrity: sha512-ImmZF0Lon5RrQpsEAKGxRvHwCvMgSC4XVlFRqmbzTEDb/3wvin9zfEZrMwgsa3yqBbPqahYcVI6lulM2S7IZAA==}
@@ -5854,6 +5878,16 @@ snapshots:
   '@types/busboy@1.5.4':
     dependencies:
       '@types/node': 20.17.16
+
+  '@types/color-convert@2.0.4':
+    dependencies:
+      '@types/color-name': 1.1.5
+
+  '@types/color-name@1.1.5': {}
+
+  '@types/color@4.2.0':
+    dependencies:
+      '@types/color-convert': 2.0.4
 
   '@types/debug@4.1.12':
     dependencies:
@@ -8281,6 +8315,8 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   tabbable@6.2.0: {}
+
+  tailwind-merge@3.0.1: {}
 
   tailwindcss@4.0.3: {}
 
