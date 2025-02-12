@@ -14,6 +14,7 @@ export interface Config {
     posts: Post;
     media: Media;
     users: User;
+    postTags: PostTag;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -23,6 +24,7 @@ export interface Config {
     posts: PostsSelect<false> | PostsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    postTags: PostTagsSelect<false> | PostTagsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -67,6 +69,7 @@ export interface Post {
   id: number;
   title: string;
   bannerImage?: (number | null) | Media;
+  postTags?: (number | Post)[] | null;
   summary?: {
     root: {
       type: string;
@@ -207,6 +210,17 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "postTags".
+ */
+export interface PostTag {
+  id: number;
+  tag?: string | null;
+  color: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -223,6 +237,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'postTags';
+        value: number | PostTag;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -273,6 +291,7 @@ export interface PayloadMigration {
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
   bannerImage?: T;
+  postTags?: T;
   summary?: T;
   content?: T;
   updatedAt?: T;
@@ -379,6 +398,16 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "postTags_select".
+ */
+export interface PostTagsSelect<T extends boolean = true> {
+  tag?: T;
+  color?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

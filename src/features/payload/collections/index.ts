@@ -1,9 +1,6 @@
+import { PostTags } from "@/features/payload/collections/PostTags";
 import { Posts } from "@/features/payload/collections/Posts";
 import { Users } from "@/features/payload/collections/Users";
 import { Media } from "@/features/payload/collections/Media";
 
-export const collections = [
-  Posts,
-  Media,
-  Users,
-];
+export const collections = [Posts, Media, Users, PostTags];
